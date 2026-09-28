@@ -1,0 +1,139 @@
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.compare-grid::before,
+.compare-grid::after {
+  grid-row: 1;
+  padding: 0 24px 2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+.compare-grid::before {
+  content: 'PROBLEMAS';
+  color: var(--red);
+}
+
+.compare-grid::after {
+  content: 'SOLUCIONES';
+  color: #719600;
+}
+
+.compare-row {
+  grid-column: 1 / -1;
+}
+
+.offer-copy {
+  margin-top: 24px;
+}
+
+.contact-form select {
+  width: 100%;
+  border: 1px solid #cbd6df;
+  border-radius: 7px;
+  padding: 12px;
+  color: var(--navy);
+  background: #fff;
+  font: inherit;
+  outline: none;
+}
+
+.contact-form select:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px #0a25401c;
+}
+
+.contact-aside {
+  align-self: start;
+  margin-top: 227px;
+}
+
+.contact-form {
+  scroll-margin-top: 100px;
+}
+
+.contact-send-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--navy);
+  background: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.contact-send-status.sent {
+  border-color: var(--lime);
+  background: #f7fbe9;
+}
+
+.send-waves {
+  position: relative;
+  display: grid;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+}
+
+.send-waves::before,
+.send-waves::after,
+.send-waves span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--lime);
+  border-radius: 50%;
+  content: '';
+  animation: send-wave 1.5s ease-out infinite;
+}
+
+.send-waves::after {
+  animation-delay: 0.5s;
+}
+
+.send-waves span {
+  animation-delay: 1s;
+}
+
+.contact-form button:disabled {
+  cursor: default;
+  opacity: 0.82;
+}
+
+@keyframes send-wave {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.45);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .send-waves::before,
+  .send-waves::after,
+  .send-waves span {
+    animation: none;
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+@media (max-width: 720px) {
+  .contact-aside {
+    margin-top: 0;
+  }
+}
