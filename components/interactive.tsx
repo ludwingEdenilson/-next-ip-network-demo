@@ -112,7 +112,7 @@ export function CoverageChecker() {
     setEmailNotice('Correo válido. En esta demo no se guarda ni se envía el aviso.')
   }
 
-  const whatsappHref = `https://wa.me/50377777777?text=${encodeURIComponent(`Hola, quisiera consultar cobertura en ${resultCity}.`)}`
+  const whatsappHref = `https://wa.me/50300000000?text=${encodeURIComponent(`Hola, quisiera consultar cobertura en ${resultCity}.`)}`
 
   return (
     <div className="coverage-nav" ref={rootRef}>
