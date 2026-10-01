@@ -1,30 +1,20 @@
-import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import './home-adjustments.css'
 
 export const metadata: Metadata = {
-  title: 'Next IP Network | Conexión que fluye',
-  description: 'Internet rápido, claro y humano. Fibra, 5G y soluciones para empresas con soporte 24/7.',
+  title: {
+    default: 'Internet de fibra óptica y 5G en El Salvador | Next IP',
+    template: '%s | Next IP',
+  },
+  description: 'Conéctate con internet de fibra óptica simétrica y soluciones 5G de Next IP en El Salvador. Compara planes y consulta cobertura para tu ciudad.',
   metadataBase: new URL('https://nextip.network'),
-  openGraph: { title: 'Next IP Network | Conexión que fluye', description: 'Internet rápido, claro y humano para todo lo que importa.', type: 'website', url: 'https://nextip.network' },
-  twitter: { card: 'summary_large_image', title: 'Next IP Network', description: 'Conectividad sin fronteras.' },
-  generator: 'v0.app',
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true },
+  openGraph: { title: 'Internet de fibra óptica y 5G en El Salvador | Next IP', description: 'Conéctate con internet de fibra óptica simétrica y soluciones 5G de Next IP en El Salvador. Compara planes y consulta cobertura para tu ciudad.', type: 'website', locale: 'es_SV', url: 'https://nextip.network', siteName: 'Next IP Network', images: [{ url: '/images/connection-workspace.png', alt: 'Personas colaborando con tecnología en un entorno de trabajo' }] },
+  twitter: { card: 'summary_large_image', title: 'Internet de fibra óptica y 5G en El Salvador | Next IP', description: 'Fibra óptica simétrica y soluciones 5G de Next IP en El Salvador.', images: ['/images/connection-workspace.png'] },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
     apple: '/apple-icon.png',
   },
 }
@@ -46,7 +36,6 @@ export default function RootLayout({
     <html lang="es">
       <body className="antialiased">
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
   )
