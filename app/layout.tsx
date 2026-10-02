@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: 'Internet de fibra óptica y 5G en El Salvador | Next IP', description: 'Fibra óptica simétrica y soluciones 5G de Next IP en El Salvador.', images: ['/images/wifi-connection.jpg'] },
   icons: {
     icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-    apple: '/apple-icon.png',
+    apple: '/icon-removebg-preview.png',
   },
 }
 
